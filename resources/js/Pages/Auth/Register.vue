@@ -10,6 +10,7 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors.vue';
 
 const form = useForm({
     name: '',
+    cedula: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -44,6 +45,18 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="name"
+                />
+            </div>
+            <div class=" mt-3">
+                <JetLabel for="cedula" value="cedula" />
+                <JetInput
+                    id="cedula"
+                    v-model="form.cedula"
+                    type="number"
+                    class="mt-1 block w-full"
+                    required
+                    autofocus
+                    autocomplete="cedula"
                 />
             </div>
 
