@@ -18,6 +18,8 @@ class UserController extends Controller
         $users = User::latest()
         ->paginate(40);
 
+        dd('users');
+
         return Inertia::render('Users/Index', compact('users'));
     }
 

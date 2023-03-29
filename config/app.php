@@ -178,6 +178,8 @@ return [
         App\Providers\JetstreamServiceProvider::class,
 
         Spatie\Permission\PermissionServiceProvider::class,
+        Maatwebsite\Excel\Facades\Excel::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
