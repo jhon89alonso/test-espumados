@@ -94,8 +94,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user)
     {
-        //
+        $user = User::find($user);
+        $user->delete($user);
+
+        return redirect()->route('users.index')->with('status', 'Usuario eliminado');
     }
 }

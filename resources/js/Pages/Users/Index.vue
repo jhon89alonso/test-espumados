@@ -46,7 +46,7 @@
                                         class="text-gray-700 bg-gray-200 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                         :href="route('users.show', user.id)"
                                     >
-                                        Ver
+                                        Rol
                                     </Link>
                                     <Link
                                         class="inline-block mx-1 px-2 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
@@ -54,18 +54,11 @@
                                         >Editar</Link
                                     >
                                     <!-- <button>eliminar</button> -->
-                                </td>
-                                <td class="px-4 py-2">
-                                    <!-- <Link
-                                        class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                                        :href="
-                                            route(
-                                                'centroCosto.edit',
-                                                centroCosto.id
-                                            )
-                                        "
-                                        >Editar</Link
-                                    > -->
+                                    <a
+                                        class="inline-block mx-1 px-2 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:border-red-900 focus:ring-0 transition duration-150 ease-in-out"
+                                        @click="destroyUser(user.id)"
+                                        >Eliminar</a
+                                    >
                                 </td>
                             </tr>
                         </tbody>
@@ -104,6 +97,15 @@ export default {
     },
     props: {
         users: Array,
+    },
+    methods: {
+        destroyUser(data) {
+            if (confirm("¿Eliminar usuario registrado?" )) {
+                let id_user = data;
+                console.log('eliminando ..');
+                this.$inertia.delete(this.route('users.destroy',id_user))
+            }
+        },
     },
 };
 </script>
