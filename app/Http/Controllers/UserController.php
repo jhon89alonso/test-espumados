@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -16,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()
-        ->paginate(40);
+            ->paginate(40);
 
         //dd( $users);
 
@@ -61,9 +62,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        //dd($user);
+
+        return Inertia::render('Users/Edit', compact('user'));
     }
 
     /**
@@ -73,9 +76,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        //dd($request->all(), $id);
+        if ($request['password']) {
+            $request['password'] = Hash::make($request['password']);
+        }
+
+        $user->update($request->all());
+
+        return redirect(route('users.index'));
     }
 
     /**

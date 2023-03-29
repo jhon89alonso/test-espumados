@@ -41,7 +41,7 @@
                                     {{ user.email }}
                                 </td>
 
-                                <td class=" border px-3 py-2">
+                                <td class="border px-3 py-2">
                                     <Link
                                         class="text-gray-700 bg-gray-200 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                         :href="route('users.show', user.id)"
@@ -85,7 +85,14 @@
                     ></Link>
                 </div>
             </div>
-            <div class="md:col-span-2 bg-green-200"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis odio quam eius alias rerum? Pariatur officiis, nihil alias reprehenderit ipsum necessitatibus sit itaque eligendi inventore deleniti magni accusamus earum eos.</p></div>
+            <div class="md:col-span-2 bg-green-200">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Facilis odio quam eius alias rerum? Pariatur officiis, nihil
+                    alias reprehenderit ipsum necessitatibus sit itaque eligendi
+                    inventore deleniti magni accusamus earum eos.
+                </p>
+            </div>
         </div>
     </div>
 </template>
