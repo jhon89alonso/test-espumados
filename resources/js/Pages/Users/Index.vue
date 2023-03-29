@@ -79,12 +79,9 @@
                 </div>
             </div>
             <div class="md:col-span-2 bg-green-200">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Facilis odio quam eius alias rerum? Pariatur officiis, nihil
-                    alias reprehenderit ipsum necessitatibus sit itaque eligendi
-                    inventore deleniti magni accusamus earum eos.
-                </p>
+                <div class="px-3">
+                   <Link :href="route('roles.index')" >Ver Roles</Link>
+                </div>
             </div>
         </div>
     </div>
