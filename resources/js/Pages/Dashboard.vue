@@ -1,22 +1,17 @@
-<script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Jetstream/Welcome.vue';
+<script >
+import { Link } from "@inertiajs/inertia-vue3";
+
+export default {
+    components: {
+        Link,
+    },
+}
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
-            </h2>
-        </template>
+    <h2 class="my-8">Dashboard</h2>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
-                </div>
-            </div>
-        </div>
-    </AppLayout>
+    <Link class="mx-2 my-1 bg-purple-400 text-white hover:bg-pink-900" :href="route('users.index')">Ver usuarios</Link>
+    <Link class="mx-2 my-1 bg-purple-400 text-white hover:bg-pink-900" :href="route('roles.index')">Ver Roles</Link>
+
 </template>

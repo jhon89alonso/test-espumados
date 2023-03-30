@@ -22,15 +22,15 @@
                     class="flex   bg-gray-900 justify-between items-center text-gray-200 px-4 shadow-md sm:py-4 sm:justify-around">
                     <div class="sm:hidden text-2xl">&equiv;</div>
                     <ul class="hidden sm:flex justify-between w-64 text-gray-400">
-                        <li>
+                        {{-- <li>
                             <a href="http://">Inicio</a>
                         </li>
                         <li>
                             <a href="http://">Categorías de Roles</a>
                         </li>
                         <li>
-                            <a href="http://">Usuarios registrados</a>
-                        </li>
+                            <a href="{{route('users.index')}}">Usuarios registrados</a>
+                        </li> --}}
                     </ul>
                     <ul class="flex justify-between w-20">
                         <li>

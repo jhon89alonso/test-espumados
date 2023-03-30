@@ -2,7 +2,16 @@
     <div class="md:grid md:grid-cols-6 gap-2">
         <div class="md:col-span-1 bg-green-200">
             <h3>Roles del sistema</h3>
-            <Link :href="route('roles.create')">Crear Rol</Link>
+            <Link
+                class="rounded-sm bg-indigo-300 text-gray-800 hover:bg-indigo-700 px-3 py-2"
+                :href="route('roles.create')"
+                >Crear Rol</Link
+            >
+            <Link
+                class="inline-block mx-1 px-2 py-2 border-2 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                :href="route('dashboard')"
+                >Inicio</Link
+            >
         </div>
 
         <div class="md:col-span-5 bg-red-50">
