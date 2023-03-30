@@ -37,3 +37,5 @@ Route::middleware([
 
 Route::resource('users', \App\Http\Controllers\UserController::class);
 Route::resource('roles', \App\Http\Controllers\RoleController::class);
+Route::get('user/export/pdf','\App\Http\Controllers\Export\UserExportPDFController@exporPdfUser')->name('user.export.pdf');
+Route::get('user/export/Exel','\App\Http\Controllers\Export\UserExportPDFController@exportExcel')->name('user.export.excel');
