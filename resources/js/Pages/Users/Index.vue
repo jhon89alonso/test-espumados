@@ -13,10 +13,10 @@
                 <div class="mt-5 md:mt-0 shadow bg-white md:rounded-md p-4">
                     <!-- <pre> {{ users }} </pre> -->
                     <table
-                        class="w-full px-4 text-sm text-left text-gray-500 dark:text-gray-400"
+                        class="w-full px-4 text-sm text-left text-gray-500"
                     >
                         <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                            class="text-xs text-gray-700 uppercase bg-gray-50"
                         >
                             <tr>
                                 <th>Nombre</th>
