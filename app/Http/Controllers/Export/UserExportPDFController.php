@@ -27,6 +27,7 @@ class UserExportPDFController extends Controller
 
     public function exportExcel() 
     {
-        return Excel::download(new UsersExport, 'users.xlsx');
+         $date =date( date('Y-m') );
+        return Excel::download(new UsersExport, 'users.xlsx',);
     }
 }
