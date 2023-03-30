@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 use Spatie\Permission\Models\Role;
 
+use function Termwind\render;
+
 class UserController extends Controller
 {
 
@@ -38,7 +40,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Users/Create');
     }
 
     /**
@@ -49,7 +51,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+      $user = User::create($input);
+
+      return redirect()->route('users.index');
     }
 
     /**

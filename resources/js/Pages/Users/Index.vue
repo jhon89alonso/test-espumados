@@ -2,6 +2,11 @@
     <div class="container mx-auto">
         <div class="bg-gray-800">
             <h2 class="text-white">Usuarios registrados</h2>
+            <Link
+                class="inline-block mx-1 px-2 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                :href="route('users.create')"
+                >Crear usuario</Link
+            >
         </div>
         <div class="md:grid md:grid-cols-8">
             <div class="md:col-span-6 bg-blue-200">

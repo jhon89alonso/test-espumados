@@ -41,7 +41,7 @@ Route::group(
     ],
     function () {
         Route::group([
-            'middleware' => ['role:Administrador|Gerencia']
+            'middleware' => ['role:Administrador']
         ], function () {
             Route::resource('users', \App\Http\Controllers\UserController::class);
             Route::resource('roles', \App\Http\Controllers\RoleController::class);
