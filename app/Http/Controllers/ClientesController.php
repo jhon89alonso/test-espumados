@@ -16,7 +16,7 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = Clientes::all();
-        dd($clientes);
+        //dd($clientes);
         return Inertia::render('Clientes/Index', compact('clientes'));
     }
 

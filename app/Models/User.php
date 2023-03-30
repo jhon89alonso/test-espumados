@@ -63,4 +63,35 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function authorizaRole($roles)
+    {
+        if ($this->hasAnyRole($roles)) {
+        }
+        abort(401, 'No tiene el permiso de ingresar');
+    }
+
+    public function hasAnyRole($roles)
+    {
+        if (is_array($roles)) {
+            foreach ($roles as $role) {
+                if ($this->hasRole($role)) {
+                    return true;
+                }
+            }
+        } else {
+            if ($this->hasRole($roles)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function hasRoles($role)
+    {
+        if ($this->roles->where('name', $role)->first()) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -11,6 +11,7 @@ import { Link } from "@inertiajs/inertia-vue3";
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
+                {{ $page.props.user.roles[0] }}
             </h2>
         </template>
 
@@ -25,9 +26,15 @@ import { Link } from "@inertiajs/inertia-vue3";
                         >Ver usuarios</Link
                     >
                     <Link
+                    v-if="$page.props.user.roles.includes('Administrador')"
                         class="mx-2 my-1 bg-gray-700 py-1 px-2 rounded-md text-white hover:bg-pink-900"
                         :href="route('roles.index')"
                         >Ver Roles</Link
+                    >
+                    <Link
+                        class="mx-2 my-1 bg-green-700 py-1 px-2 rounded-md text-white hover:bg-green-900"
+                        :href="route('clientes.index')"
+                        >Ver clientes</Link
                     >
                 </div>
             </div>
