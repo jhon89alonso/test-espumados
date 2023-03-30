@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -65,8 +66,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //dd($user);
-
-        return Inertia::render('Users/Edit', compact('user'));
+        $roles = Role::all();
+        return Inertia::render('Users/Edit', compact('user', 'roles'));
     }
 
     /**
@@ -84,7 +85,9 @@ class UserController extends Controller
         }
 
         $user->update($request->all());
+        $user->roles()->detach();
 
+        $user->assignRole($request->rol);
         return redirect(route('users.index'));
     }
 
