@@ -13,5 +13,13 @@ Para clonarlo y ver funcionamiento, asegurese de relaizar los siguientes pasos
 - composer install
 - composer dumpautoload
 - php artisan optimize  o php artisan config:cache
+- Revisar versión de Node e instarlo en el equipo
+- Realizar npm install --save-dev
+
 
 Luego cree una base de datos en su servidor local con el nombre de test_espumados
+
+Debe tener en cuenta que debe realizar la migracion con php artisan migrate --seed
+si tiene paso por alto el paso del seeder realice php artisan migrate:refresh --seed
+
+Luego realizar el npm run dev para que compile los componentes, vistas y archivos creados con vue 
